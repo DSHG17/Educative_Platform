@@ -18,6 +18,6 @@ courseSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }]
-    
-
 })
+
+export default model("Course", courseSchema)
