@@ -14,10 +14,11 @@ courseSchema = Schema({
         ref: 'User',
         required: true
     },
-    students:[{
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }]
+    students: {
+        type: [Schema.Types.ObjectId],
+        ref: "User",
+        default: [],
+      },
 })
 
 export default model("Course", courseSchema)

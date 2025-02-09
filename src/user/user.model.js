@@ -1,54 +1,58 @@
-import {Schema, model} from "mongoose";
+import { Schema, model } from "mongoose";
 
 const userSchema = Schema({
-    name:{
+    name: {
         type: String,
         required: [true, "Name is required"],
-        maxLength:[25, "Name cannot exceed 25 characters"]
+        maxLength: [25, "Name cannot exceed 25 characters"]
     },
-    surname:{
+    surname: {
         type: String,
         required: [true, "Name is required"],
-        maxLength:[25, "Name cannot exceed 25 characters"]
+        maxLength: [25, "Name cannot exceed 25 characters"]
     },
-    username:{
+    username: {
         type: String,
-        required:true,
+        required: true,
         unique: true
     },
-    password:{
+    password: {
         type: String,
         required: true,
         minLength: 8
     },
-    email:{
+    email: {
         type: String,
         required: [true, "Email is required"],
         unique: true
     },
-    profilePicture:{
+    profilePicture: {
         type: String,
     },
-    phone:{
+    phone: {
         type: String,
         required: true,
         minLength: 8,
         maxLength: 8
     },
-    role:{
+    role: {
         type: String,
         required: true,
         enum: ["STUDENT_ROLE", "TEACHER_ROLE"],
         default: "STUDENT_ROLE"
     },
-    status:{
+    status: {
         type: Boolean,
         default: true
+    }, coursesAssigned: {
+        type: [Schema.Types.ObjectId],
+        ref: "Course",
+        default: [],
     }
 },
-{
-    versionKey: false,
-    timeStamps: true
-})
+    {
+        versionKey: false,
+        timeStamps: true
+    })
 
 export default model("User", userSchema)
