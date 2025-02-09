@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-courseSchema = Schema({
+const courseSchema = Schema({
     title:{
         type: String,
         required: true
@@ -16,9 +16,17 @@ courseSchema = Schema({
     },
     students: {
         type: [Schema.Types.ObjectId],
-        ref: "User",
+        ref: 'User',
         default: [],
       },
+    status:{
+        type: Boolean,
+        default: true
+    },
+    status:{
+        type:Boolean,
+        default: true
+    }
 })
 
 export default model("Course", courseSchema)

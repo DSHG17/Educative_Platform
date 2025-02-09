@@ -7,6 +7,7 @@ import morgan from "morgan"
 import { dbConnection } from './mongo.js'
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import courseRoutes from "../src/course/course.routes.js"
 
 
 const middlewares = (app) => {
@@ -30,6 +31,7 @@ const conectarDB = async () => {
 const routes = (app) => {
     app.use("/educativePlatform/v1/auth", authRoutes)
     app.use("/educativePlatform/v1/user", userRoutes)
+    app.use("/educativePlatform/v1/course", courseRoutes)
 }
 
 export const initServer = () => {

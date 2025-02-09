@@ -1,4 +1,5 @@
 import User from "../user/user.model.js"
+import Course from "../course/course.model.js"
 
 export const existeEmail = async(email = '') =>{
     const existe = await User.findOne({email})
@@ -18,5 +19,12 @@ export const userExists = async(uid = '') =>{
     const existe = await User.findById(uid)
     if(!existe){
         throw new Error("El usuario no existe")
+    }
+}
+
+export const courseExists = async(cid = '') =>{
+    const existe = await Course.findById(cid)
+    if(!existe){
+        throw new Error("El curso no existe");
     }
 }

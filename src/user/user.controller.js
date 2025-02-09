@@ -6,14 +6,14 @@ export const getUsers = async(req, res) => {
         const { limits = 3, from = 0} = req.query
         const query = {status: true}
 
-
         const [ total, users ] = await Promise.all([
             User.countDocuments(query),
             User.find(query)
                 .skip(Number(from))
                 .limit(Number(limits))
+                .populate('coursesAssigned')
         ])
-
+        console.log(users);
         return res.status(200).json({
             success: true,
             total,
@@ -28,6 +28,7 @@ export const getUsers = async(req, res) => {
         })
     }
 }
+
 
 export const updateUser = async (req, res) => {
     try {
