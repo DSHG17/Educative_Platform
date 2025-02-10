@@ -1,5 +1,5 @@
 # API del sistema educativo
-
+API, que nos permite administrar alumnos/maestros/cursos
 
 
 ## Variables de Entorno
@@ -13,6 +13,7 @@ JWT_SECRET=<tu_secreto_jwt>
 ```
 
 ## Endpoints de la API
+Por favor cambiar los id en postman, porque no son los mismos
 
 ### Cursos
 
@@ -137,4 +138,5 @@ JWT_SECRET=<tu_secreto_jwt>
       "role" : "TEACHER_ROLE/STUDENT_ROLE"
     }
     ```
+
 
