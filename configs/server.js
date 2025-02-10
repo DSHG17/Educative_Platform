@@ -37,6 +37,8 @@ const routes = (app) => {
 export const initServer = () => {
     const app = express()
     try{
+        app.use(express.urlencoded({extended: false}))
+        app.use(express.json())
         middlewares(app)
         conectarDB()
         routes(app)
