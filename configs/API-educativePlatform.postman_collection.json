@@ -12,24 +12,160 @@
 				{
 					"name": "Register Student",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Derian ",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Hernández",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Fiero317mamut",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Samedirection14",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dshgonzalez13@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "40191129",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "STUDENT_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Login",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dshgonzalez14@gmail.com\",\r\n    \"password\" : \"Samedirection14\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Register Teacher",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Braulio",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Echeverria",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "GODLIO",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Samedirection14",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dshgonzalez14@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "31657408",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "TEACHER_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
 					},
 					"response": []
 				}
@@ -40,33 +176,157 @@
 			"item": [
 				{
 					"name": "Get users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"user",
+								""
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Delete User",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/user/deleteUser/67a95516a5dfcb3235d21d28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"user",
+								"deleteUser",
+								"67a95516a5dfcb3235d21d28"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Update Password",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\" : \"Samedirection14*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/user/updatePassword/67a7f71fb885468eea177ab0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"user",
+								"updatePassword",
+								"67a7f71fb885468eea177ab0"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Update User",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Derian ",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Hernández",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "RinTohsaka1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Samedirection14",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dshgonzalez13@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "31657408",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "STUDENT_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/user/updateUser/67a95516a5dfcb3235d21d28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"user",
+								"updateUser",
+								"67a95516a5dfcb3235d21d28"
+							]
+						}
 					},
 					"response": []
 				}
@@ -78,40 +338,154 @@
 				{
 					"name": "Create Course",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Matematicas\",\r\n    \"description\": \"Clase numerica\",\r\n    \"email\" : \"dshgonzalez14gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/course/createCourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"course",
+								"createCourse"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Get Courses by teacher",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/course/getCoursesByTeacher/dshgonzalez14@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"course",
+								"getCoursesByTeacher",
+								"dshgonzalez14@gmail.com"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Update course",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"dshgonzalez15@gmail.com\",\r\n  \"cid\": \"67a83b0d533d01ab9e51ee2b\", \r\n  \"title\":  \"Ciencias\",\r\n  \"description\": \"Cuerpo Humano\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/course/updateCourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"course",
+								"updateCourse"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Delete Course",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"dshgonzalez15@gmail.com\",\r\n  \"courseId\": \"67a8371622c5bc2fc3982355\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/course/deleteCourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"course",
+								"deleteCourse"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Asignar alumno",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"67a95587a5dfcb3235d21d30\",\r\n    \"email\": \"dshgonzalez13@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/educativePlatform/v1/course/assignStudent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"educativePlatform",
+								"v1",
+								"course",
+								"assignStudent"
+							]
+						}
 					},
 					"response": []
 				}
